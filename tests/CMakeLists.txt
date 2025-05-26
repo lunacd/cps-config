@@ -5,7 +5,6 @@ add_executable(cps-tests
     loader.cpp
     utils.cpp
     version.cpp
-    pc_parser.cpp
 )
 target_link_libraries(cps-tests PRIVATE cps)
 target_link_libraries(cps-tests PRIVATE
