@@ -6,7 +6,6 @@
 
 #include "cps/error.hpp"
 #include "cps/loader.hpp"
-#include "cps/pc_compat/pc_loader.hpp"
 #include "cps/platform.hpp"
 #include "cps/utils.hpp"
 #include "cps/version.hpp"
@@ -246,8 +245,7 @@ namespace cps::search {
                 file.open(path);
 
                 // Assume file is CPS unless file extension is .pc
-                auto n = std::make_shared<Node>(CPS_TRY(
-                    path.extension() == ".pc" ? pc_compat::load(file, path.parent_path()) : loader::load(file, path)));
+                auto n = std::make_shared<Node>(CPS_TRY(loader::load(file, path)));
 
                 cache.emplace(name, n);
                 return n;
