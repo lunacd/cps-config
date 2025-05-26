@@ -30,5 +30,5 @@ target_link_libraries(cps PRIVATE nlohmann_json::nlohmann_json)
 add_executable(cps-config cps-config/main.cpp)
 target_link_libraries(cps-config PRIVATE cps fmt::fmt)
 
-find_package(CLI11 2.1 REQUIRED)
+find_package(CLI11 REQUIRED)
 target_link_libraries(cps-config PRIVATE CLI11::CLI11)
